@@ -1,0 +1,14 @@
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\bin\Debug\netcoreapp2.1\aspnet_core_fundamentals.deps.json
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\bin\Debug\netcoreapp2.1\aspnet_core_fundamentals.runtimeconfig.json
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\bin\Debug\netcoreapp2.1\aspnet_core_fundamentals.runtimeconfig.dev.json
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\bin\Debug\netcoreapp2.1\aspnet_core_fundamentals.dll
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\bin\Debug\netcoreapp2.1\aspnet_core_fundamentals.pdb
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.csprojAssemblyReference.cache
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.csproj.CoreCompileInputs.cache
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.RazorAssemblyInfo.cache
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.RazorAssemblyInfo.cs
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.AssemblyInfoInputs.cache
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.AssemblyInfo.cs
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.RazorTargetAssemblyInfo.cache
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.dll
+C:\workspace\ASP.NET-Core-study\aspnet_core_fundamentals\aspnet_core_fundamentals\obj\Debug\netcoreapp2.1\aspnet_core_fundamentals.pdb
