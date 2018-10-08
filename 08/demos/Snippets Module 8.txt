@@ -1,0 +1,167 @@
+
+Building your first ASP.NET Core 2 MVC application with Visual Studio 2017
+--------------------------------------------------------------------------
+
+Snippets Module 7
+-----------------
+
+AccountController.cs
+--------------------
+
+public class AccountController : Controller
+{
+	private readonly SignInManager<IdentityUser> _signInManager;
+	private readonly UserManager<IdentityUser> _userManager;
+
+	public AccountController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+	{
+		_signInManager = signInManager;
+		_userManager = userManager;
+	}
+
+	public IActionResult Login()
+	{
+		return View();
+	}
+
+	[HttpPost]
+	public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+	{
+		if (!ModelState.IsValid)
+			return View(loginViewModel);
+
+		var user = await _userManager.FindByNameAsync(loginViewModel.UserName);
+
+		if (user != null)
+		{
+			var result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, false, false);
+			if (result.Succeeded)
+			{
+				return RedirectToAction("Index", "Home");
+			}
+		}
+
+		ModelState.AddModelError("", "User name/password not found");
+		return View(loginViewModel);
+	}
+
+	public IActionResult Register()
+	{
+		return View(new LoginViewModel());
+	}
+
+	[HttpPost]
+	public async Task<IActionResult> Register(LoginViewModel loginViewModel)
+	{
+		if (ModelState.IsValid)
+		{
+			var user = new IdentityUser() { UserName = loginViewModel.UserName };
+			var result = await _userManager.CreateAsync(user, loginViewModel.Password);
+
+			if (result.Succeeded)
+			{
+				return RedirectToAction("Index", "Home");
+			}
+		}
+		return View(loginViewModel);
+	}
+
+	[HttpPost]
+	public async Task<IActionResult> Logout()
+	{
+		await _signInManager.SignOutAsync();
+		return RedirectToAction("Index", "Home");
+	}
+}
+
+
+Views/Account/Index.cshtml
+--------------------------
+
+@model LoginViewModel
+
+<h2>Before contacting us, please log in or <a asp-action="Register" asp-controller="Account">register!</a></h2>
+
+<form asp-action="Login" asp-controller="Account" method="post" class="form-horizontal" role="form">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="UserName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary" value="Log in" />
+        </div>
+    </div>
+</form>
+
+
+Views/Account/Register.cshtml
+-----------------------------
+
+@model LoginViewModel
+
+<h2>Before contacting us, please log in or < register!</h2>
+
+<form asp-action="Register" asp-controller="Account" method="post" class="form-horizontal" role="form">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+    <div class="form-group">
+        <label asp-for="UserName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary" value="Register" />
+        </div>
+    </div>
+</form>
+
+
+Layout.cshtml changes
+---------------------
+
+@if (SignInManager.IsSignedIn(User))
+{
+	<form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
+		  method="post" class="navbar-right">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+		</ul>
+	</form>
+}
+else
+{
+	<ul class="nav navbar-nav navbar-right">
+		<li><a id="registerLink" asp-controller="Account" asp-action="Register">Register</a></li>
+		<li><a id="loginLink" asp-controller="Account" asp-action="Login">Log in</a></li>
+	</ul>
+}
