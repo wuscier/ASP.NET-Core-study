@@ -1,0 +1,11 @@
+E:\workspace\ASP.NET-Core-study\myApp\bin\Debug\netcoreapp2.1\myApp.deps.json
+E:\workspace\ASP.NET-Core-study\myApp\bin\Debug\netcoreapp2.1\myApp.runtimeconfig.json
+E:\workspace\ASP.NET-Core-study\myApp\bin\Debug\netcoreapp2.1\myApp.runtimeconfig.dev.json
+E:\workspace\ASP.NET-Core-study\myApp\bin\Debug\netcoreapp2.1\myApp.dll
+E:\workspace\ASP.NET-Core-study\myApp\bin\Debug\netcoreapp2.1\myApp.pdb
+E:\workspace\ASP.NET-Core-study\myApp\obj\Debug\netcoreapp2.1\myApp.csprojAssemblyReference.cache
+E:\workspace\ASP.NET-Core-study\myApp\obj\Debug\netcoreapp2.1\myApp.csproj.CoreCompileInputs.cache
+E:\workspace\ASP.NET-Core-study\myApp\obj\Debug\netcoreapp2.1\myApp.AssemblyInfoInputs.cache
+E:\workspace\ASP.NET-Core-study\myApp\obj\Debug\netcoreapp2.1\myApp.AssemblyInfo.cs
+E:\workspace\ASP.NET-Core-study\myApp\obj\Debug\netcoreapp2.1\myApp.dll
+E:\workspace\ASP.NET-Core-study\myApp\obj\Debug\netcoreapp2.1\myApp.pdb
