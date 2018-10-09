@@ -20,9 +20,23 @@ namespace RazorPagesMovie.Pages.Movies
 
         public IList<Movie> Movie { get;set; }
 
+<<<<<<< HEAD
         public async Task OnGetAsync()
         {
             Movie = await _context.Movie.ToListAsync();
+=======
+        public async Task OnGetAsync(string searchString)
+        {
+            var movies = from m in _context.Movie
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            Movie = await movies.ToListAsync();
+>>>>>>> e386c088684990027c234fafd34d9f652b4a037c
         }
     }
 }
